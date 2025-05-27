@@ -1,0 +1,42 @@
+ .imprint-container {
+     display: flex;
+     flex-direction:column;
+     gap: 36px;
+     flex: 1;
+     max-width: 50%;
+     margin: 0 auto;
+     padding: 5px;
+     border-radius: 15px;
+     overflow-y: auto;
+     max-height: calc(100vh - 320px);
+     position: relative;
+ }
+
+ .imprint-container::-webkit-scrollbar {
+     width: 12px;
+     display: none;
+ }
+
+ .imprint-container::-webkit-scrollbar-track {
+     background: rgba(0, 0, 0, 0.2);
+     border-radius: 10px;
+ }
+
+ .imprint-container::-webkit-scrollbar-thumb {
+     background: linear-gradient(180deg, #ff6b35, #e9670a);
+     border-radius: 10px;
+     border: 2px solid rgba(0, 0, 0, 0.2);
+ }
+
+ .imprint-container::-webkit-scrollbar-thumb:hover {
+     background: linear-gradient(180deg, #e9670a, #ff6b35);
+ }
+
+
+ 
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #ff6b00;
+} 
+
