@@ -1,81 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="contact_title">Kontakt</title>
     <link rel="stylesheet" href="default.css" />
     <link rel="stylesheet" href="contact.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="language-switcher.css" />
   </head>
   <body>
     <header class="header">
       <nav class="nav-container">
         <div class="logo">
-          <img
-            src="assets/Logo.png"
-            alt="BunkerBandits Logo"
-            class="logo-img"
-          />
+          <img src="assets/Logo.png" alt="BunkerBandits Logo" class="logo-img" />
         </div>
         <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">Über uns</a></li>
-          <li><a href="media.html">Media</a></li>
-          <li><a href="#termine">Termine</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
-          <li><a href="imprint.html">Impressum</a></li>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+          <li><a href="media.html" data-i18n="nav_media">Media</a></li>
+          <li><a href="#termine" data-i18n="nav_dates">Termine</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+          <li><a href="imprint.html" data-i18n="nav_imprint">Impressum</a></li>
           <li class="flag-container">
-            <img src="assets/uk_flag.svg" alt="English" class="flag-icon" />
+            <button class="flag-btn" id="language-toggle">
+              <img src="assets/german_flag.svg" alt="Toggle Language" class="flag-icon" id="flag-icon">
+            </button>
           </li>
         </ul>
       </nav>
     </header>
 
-    <main class="">
-
-      <form  class="contact-form">
-
+    <main>
+      <form class="contact-form">
         <div class="inputs-div">
-          <label for="">Name</label>
-          <input type="text" placeholder="Dein Name" />
+          <label data-i18n="name_label">Name</label>
+          <input type="text" data-i18n-placeholder="name_placeholder" placeholder="Dein Name" />
         </div>
 
         <div class="inputs-div">
-          <label for="">E-Mail</label>
-          <input type="email" placeholder="deine@email.de" />
+          <label data-i18n="email_label">E-Mail</label>
+          <input type="email" data-i18n-placeholder="email_placeholder" placeholder="deine@email.de" />
         </div>
 
         <div class="inputs-div">
-          <label for="select options"> Betreff </label>
-          <select name="options" id="" >
-            <option value="Wahle einen betreff">Wahle einen betreff</option>
-            <option value="Booking Anfrage">Booking Anfrage</option>
-            <option value="Press & Media">Press & Media</option>
-            <option value="Fan Mail">Fan Mail</option>
-            <option value="Sonstiges">Sonstiges</option>
+          <label data-i18n="subject_label">Betreff</label>
+          <select name="options">
+            <option value="" data-i18n="subject_default">Wähle einen Betreff</option>
+            <option value="Booking Anfrage" data-i18n="subject_booking">Booking Anfrage</option>
+            <option value="Press & Media" data-i18n="subject_press">Press & Media</option>
+            <option value="Fan Mail" data-i18n="subject_fanmail">Fan Mail</option>
+            <option value="Sonstiges" data-i18n="subject_other">Sonstiges</option>
           </select>
         </div>
 
         <div class="inputs-div">
-            <label for="Nachricht">Nachricht</label>
-            <textarea name="Deine Nachricht an uns" placeholder="Deine Nachricht an uns" id=""></textarea>
+          <label data-i18n="message_label">Nachricht</label>
+          <textarea data-i18n-placeholder="message_placeholder" placeholder="Deine Nachricht an uns"></textarea>
         </div>
 
-        <button>Nachricht Senden</button>
-
+        <button data-i18n="submit_button">Nachricht Senden</button>
       </form>
     </main>
 
-     <footer class="footer">
-        <div class="social-icons">
-            <div class="social-icon instagram"></div>
-            <div class="social-icon facebook"></div>
-        </div>
-        <p class="footer-text">Social-Media-Links folgen in Kürze – wir arbeiten daran.</p>
-        <p class="copyright">
-            © 2025 BUNKERBANDITS. Alle Rechte vorbehalten. | Webdesign und Programmierung: Dennis Joest mit
-            Unterstützung von KI.
-        </p>
+    <footer class="footer">
+      <div class="social-icons">
+        <div class="social-icon instagram"></div>
+        <div class="social-icon facebook"></div>
+      </div>
+      <p class="footer-text" data-i18n="footer_text">Social-Media-Links folgen in Kürze – wir arbeiten daran.</p>
+      <p class="copyright" data-i18n="copyright_text">
+        © 2025 BUNKERBANDITS. Alle Rechte vorbehalten. | Webdesign und Programmierung: Dennis Joest mit Unterstützung von KI.
+      </p>
     </footer>
+
+    <script src="language-switcher.js"></script>
   </body>
 </html>

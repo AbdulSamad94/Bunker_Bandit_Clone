@@ -39,7 +39,17 @@ h1 {
 }
 
 ul {
-    list-style: none;
+  list-style: none;
+}
+
+.disclaimer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.disclaimer p {
+  margin: 10px 0px;
 }
 
 @media (max-width: 768px) {
