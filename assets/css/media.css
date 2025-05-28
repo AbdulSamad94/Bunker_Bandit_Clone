@@ -450,11 +450,11 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: center;
-    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(26, 15, 8, 0.3));
+
+    background: linear-gradient(135deg, rgba(68, 30, 16, 0.1), rgba(26, 15, 8, 0.3));
     border: 1px solid rgba(255, 107, 53, 0.2);
     border-radius: 6px;
-    padding: 10px 25px;
+    padding: 10px 10px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -531,54 +531,209 @@
 
 .video-date {
     font-size: 14px;
-    color: #ff6b35;
-    /* Orange-brown to match image */
-    font-style: italic;
 }
 
 /* Responsive Design for Videos Section */
-@media (max-width: 768px) {
-    .videos-section {
-        padding: 20px;
+@media (max-width: 1200px) {
+    .main-content {
+        padding: 1.5rem;
     }
 
-    .video-item {
-        padding: 15px 20px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .video-list {
+        grid-template-columns: 1fr;
     }
 
     .video-thumbnail-container {
-        width: 100%;
-        height: auto;
-        margin-right: 0;
-        margin-bottom: 10px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
     }
 
-    .video-title {
-        font-size: 18px;
+    .mobile-menu-toggle {
+        display: block;
     }
 
-    .video-date {
-        font-size: 12px;
+    .main-content {
+        padding: 1rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .media-tabs {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .tab-button {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .songs-section {
+        padding: 1.5rem;
+    }
+
+    .song-item {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .song-duration {
+        align-self: flex-end;
+    }
+
+    .streaming-platforms {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .platform-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .platform-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .videos-section {
+        padding: 1rem;
+    }
+
+    .video-thumbnail-container {
+        height: 180px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .videos-section {
-        padding: 15px;
+    .main-content {
+        padding: 0.5rem;
     }
 
-    .video-item {
-        padding: 12px 15px;
+    .page-title {
+        font-size: 1.8rem;
     }
 
-    .video-title {
-        font-size: 16px;
+    .media-tabs {
+        padding: 8px;
+        margin-bottom: 150px;
     }
 
-    .video-date {
-        font-size: 10px;
+    .tab-button {
+        font-size: 0.8rem;
+    }
+
+    .tab-button i {
+        margin-right: 4px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .songs-section {
+        padding: 1rem;
+    }
+
+    .song-item {
+        padding: 0.8rem;
+    }
+
+    .song-title {
+        font-size: 1.1rem;
+    }
+
+    .streaming-platforms {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .platform-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .platform-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .streaming-title {
+        font-size: 1.2rem;
+    }
+
+    .video-thumbnail-container {
+        height: 150px;
+    }
+
+    .play-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .play-button::before {
+        font-size: 20px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 320px) {
+    .page-title {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .streaming-platforms {
+        grid-template-columns: 1fr;
     }
 }
