@@ -1,136 +1,154 @@
 <!DOCTYPE html>
 <html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BunkerBandits - Deine neue Lieblingsband</title>
-    <link rel="stylesheet" href="assets/css/about.css">
-    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <link rel="stylesheet" href="assets/css/default.css" />
     <!-- Add language switcher CSS -->
-    <link rel="stylesheet" href="assets/css/language-switcher.css">
-</head>
+    <link rel="stylesheet" href="assets/css/language-switcher.css" />
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <nav class="nav-container">
-            <div class="logo">
-                <img src="assets/Logo.png" alt="BunkerBandits Logo" class="logo-img">
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-                <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
-                <li><a href="media.html" data-i18n="nav_media">Media</a></li>
-                <li><a href="#termine" data-i18n="nav_dates">Termine</a></li>
-                <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
-                <li><a href="imprint.html" data-i18n="nav_imprint">Impressum</a></li>
-                <li class="flag-container">
-                    <button class="flag-btn" id="language-toggle">
-                        <img src="assets/german_flag.svg" alt="Toggle Language" class="flag-icon" id="flag-icon">
-                    </button>
-                </li>
-            </ul>
-        </nav>
+      <nav class="nav-container">
+        <div class="logo">
+          <img
+            src="assets/Logo.png"
+            alt="BunkerBandits Logo"
+            class="logo-img"
+          />
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
+          <li><a href="media.html" data-i18n="nav_media">Media</a></li>
+          <li><a href="#termine" data-i18n="nav_dates">Termine</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+          <li><a href="imprint.html" data-i18n="nav_imprint">Impressum</a></li>
+          <li class="flag-container">
+            <button class="flag-btn" id="language-toggle">
+              <img
+                src="assets/uk_flag.svg"
+                alt="Toggle Language"
+                class="flag-icon"
+                id="flag-icon"
+              />
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <main class="main-content">
-        <h1 class="welcome-text" data-i18n="about_title">Über uns</h1>
+      <h1 class="welcome-text" data-i18n="about_title">Über uns</h1>
 
-        <h2 class="band-name" data-i18n="our_story">Unsere Geschichte</h2>
-        <p class="description" data-i18n="story_part1">
-            Die BUNKERBANDITS entstanden 2018 in Hamburg, als vier Musiker mit einer gemeinsamen Leidenschaft für
-            kraftvollen, energiegeladenen Rock zusammenfanden. Was in einem alten Bunker-Proberaum begann (daher der
-            Name), entwickelte sich schnell zu einem musikalischen Projekt, das die lokale Hamburger Musikszene
-            aufmischte.
-        </p>
-        <p class="description" data-i18n="story_part2">
-            Von den ersten Proben bis zu ausverkauften Clubs war es ein spannender Weg, geprägt von intensiven
-            Live-Shows, kreativen Jamsessions und einem Sound, der sich stetig weiterentwickelt hat, ohne seine Wurzeln
-            zu vergessen.
-        </p>
+      <h2 class="band-name" data-i18n="our_story">Unsere Geschichte</h2>
+      <p class="description" data-i18n="story_part1">
+        Die BUNKERBANDITS entstanden 2018 in Hamburg, als vier Musiker mit einer
+        gemeinsamen Leidenschaft für kraftvollen, energiegeladenen Rock
+        zusammenfanden. Was in einem alten Bunker-Proberaum begann (daher der
+        Name), entwickelte sich schnell zu einem musikalischen Projekt, das die
+        lokale Hamburger Musikszene aufmischte.
+      </p>
+      <p class="description" data-i18n="story_part2">
+        Von den ersten Proben bis zu ausverkauften Clubs war es ein spannender
+        Weg, geprägt von intensiven Live-Shows, kreativen Jamsessions und einem
+        Sound, der sich stetig weiterentwickelt hat, ohne seine Wurzeln zu
+        vergessen.
+      </p>
 
-        <h2 class="section-title" data-i18n="the_band">Die Band</h2>
-        <div class="band-grid">
-            <div class="member-card">
-                <span class="member-icon">🎤</span>
-                <h3 class="member-name">Max Müller</h3>
-                <p class="member-role" data-i18n="max_role">Gesang, Gitarre</p>
-                <p class="member-description" data-i18n="max_description">
-                    Max ist die kraftvolle Stimme der BUNKERBANDITS und bringt mit seiner rauen, emotionalen Stimme die
-                    Energie der Band direkt zum Publikum. Seine Gitarrenriffs sind das Rückgrat vieler Songs.
-                </p>
-            </div>
-
-            <div class="member-card">
-                <span class="member-icon">🎹</span>
-                <h3 class="member-name">Sarah Schmidt</h3>
-                <p class="member-role" data-i18n="sarah_role">Gesang, Keyboard</p>
-                <p class="member-description" data-i18n="sarah_description">
-                    Sarah verleiht der Band mit ihren mehrstimmigen Harmonien und atmosphärischen Keyboard-Arrangements
-                    eine einzigartige Tiefe. Ihre klassische Ausbildung trifft auf Rock-Attitude.
-                </p>
-            </div>
-
-            <div class="member-card">
-                <span class="member-icon">🎸</span>
-                <h3 class="member-name">Tom Berger</h3>
-                <p class="member-role" data-i18n="tom_role">Lead-Gitarre</p>
-                <p class="member-description" data-i18n="tom_description">
-                    Tom ist der Lead-Gitarrist und sorgt für die explosiven Soli und komplexen Gitarren-Arrangements.
-                    Seine technische Perfektion gepaart mit kreativer Spontaneität macht ihn unverzichtbar.
-                </p>
-            </div>
-
-            <div class="member-card">
-                <span class="member-icon">🎵</span>
-                <h3 class="member-name">Jan Fischer</h3>
-                <p class="member-role" data-i18n="jan_role">Bass</p>
-                <p class="member-description" data-i18n="jan_description">
-                    Jan legt mit seinem Bass das solide Fundament für den BUNKERBANDITS-Sound. Seine groovigen Basslines
-                    und sein Gespür für Rhythmus halten die Band zusammen und treiben sie voran.
-                </p>
-            </div>
-
-            <div class="member-card">
-                <span class="member-icon">🥁</span>
-                <h3 class="member-name">Lena Hoffmann</h3>
-                <p class="member-role" data-i18n="lena_role">Schlagzeug</p>
-                <p class="member-description" data-i18n="lena_description">
-                    Lena ist das rhythmische Herz der Band. Ihr kraftvolles, präzises Spiel und ihre Fähigkeit, zwischen
-                    sanften Grooves und explosiven Fills zu wechseln, macht sie zur perfekten Ergänzung der Gruppe.
-                </p>
-            </div>
+      <h2 class="section-title" data-i18n="the_band">Die Band</h2>
+      <div class="band-grid">
+        <div class="member-card">
+          <span class="member-icon">🎤</span>
+          <h3 class="member-name">Max Müller</h3>
+          <p class="member-role" data-i18n="max_role">Gesang, Gitarre</p>
+          <p class="member-description" data-i18n="max_description">
+            Max ist die kraftvolle Stimme der BUNKERBANDITS und bringt mit
+            seiner rauen, emotionalen Stimme die Energie der Band direkt zum
+            Publikum. Seine Gitarrenriffs sind das Rückgrat vieler Songs.
+          </p>
         </div>
 
-        <div class="sound-section">
-            <h2 class="sound-title" data-i18n="our_sound">Unser Sound</h2>
-            <p class="sound-description" data-i18n="sound_part1">
-                Die Musik der BUNKERBANDITS vereint klassischen Rock mit modernen Einflüssen und einem Hauch von Blues
-                und Grunge. Kraftvolle Gitarrenriffs, dynamische Rhythmen und eingängige Melodien verbinden sich mit
-                authentischen deutschen Texten zu einem unverwechselbaren Sound.
-            </p>
-            <p class="sound-description" data-i18n="sound_part2">
-                Live zeichnen wir uns durch eine energiegeladene Performance aus, die das Publikum mitreißt und den
-                Spirit einer echten Rock-Show transportiert – laut, ehrlich und direkt aus dem Herzen.
-            </p>
+        <div class="member-card">
+          <span class="member-icon">🎹</span>
+          <h3 class="member-name">Sarah Schmidt</h3>
+          <p class="member-role" data-i18n="sarah_role">Gesang, Keyboard</p>
+          <p class="member-description" data-i18n="sarah_description">
+            Sarah verleiht der Band mit ihren mehrstimmigen Harmonien und
+            atmosphärischen Keyboard-Arrangements eine einzigartige Tiefe. Ihre
+            klassische Ausbildung trifft auf Rock-Attitude.
+          </p>
         </div>
+
+        <div class="member-card">
+          <span class="member-icon">🎸</span>
+          <h3 class="member-name">Tom Berger</h3>
+          <p class="member-role" data-i18n="tom_role">Lead-Gitarre</p>
+          <p class="member-description" data-i18n="tom_description">
+            Tom ist der Lead-Gitarrist und sorgt für die explosiven Soli und
+            komplexen Gitarren-Arrangements. Seine technische Perfektion gepaart
+            mit kreativer Spontaneität macht ihn unverzichtbar.
+          </p>
+        </div>
+
+        <div class="member-card">
+          <span class="member-icon">🎵</span>
+          <h3 class="member-name">Jan Fischer</h3>
+          <p class="member-role" data-i18n="jan_role">Bass</p>
+          <p class="member-description" data-i18n="jan_description">
+            Jan legt mit seinem Bass das solide Fundament für den
+            BUNKERBANDITS-Sound. Seine groovigen Basslines und sein Gespür für
+            Rhythmus halten die Band zusammen und treiben sie voran.
+          </p>
+        </div>
+
+        <div class="member-card">
+          <span class="member-icon">🥁</span>
+          <h3 class="member-name">Lena Hoffmann</h3>
+          <p class="member-role" data-i18n="lena_role">Schlagzeug</p>
+          <p class="member-description" data-i18n="lena_description">
+            Lena ist das rhythmische Herz der Band. Ihr kraftvolles, präzises
+            Spiel und ihre Fähigkeit, zwischen sanften Grooves und explosiven
+            Fills zu wechseln, macht sie zur perfekten Ergänzung der Gruppe.
+          </p>
+        </div>
+      </div>
+
+      <div class="sound-section">
+        <h2 class="sound-title" data-i18n="our_sound">Unser Sound</h2>
+        <p class="sound-description" data-i18n="sound_part1">
+          Die Musik der BUNKERBANDITS vereint klassischen Rock mit modernen
+          Einflüssen und einem Hauch von Blues und Grunge. Kraftvolle
+          Gitarrenriffs, dynamische Rhythmen und eingängige Melodien verbinden
+          sich mit authentischen deutschen Texten zu einem unverwechselbaren
+          Sound.
+        </p>
+        <p class="sound-description" data-i18n="sound_part2">
+          Live zeichnen wir uns durch eine energiegeladene Performance aus, die
+          das Publikum mitreißt und den Spirit einer echten Rock-Show
+          transportiert – laut, ehrlich und direkt aus dem Herzen.
+        </p>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="social-icons">
-            <div class="social-icon instagram"></div>
-            <div class="social-icon facebook"></div>
-        </div>
-        <p class="footer-text" data-i18n="social_media_text">Social-Media-Links folgen in Kürze – wir arbeiten daran.
-        </p>
-        <p class="copyright" data-i18n="copyright_text">
-            © 2025 BUNKERBANDITS. Alle Rechte vorbehalten. | Webdesign und Programmierung: Dennis Joest mit
-            Unterstützung von KI.
-        </p>
+      <div class="social-icons">
+        <div class="social-icon instagram"></div>
+        <div class="social-icon facebook"></div>
+      </div>
+      <p class="footer-text" data-i18n="social_media_text">
+        Social-Media-Links folgen in Kürze – wir arbeiten daran.
+      </p>
+      <p class="copyright" data-i18n="copyright_text">
+        © 2025 BUNKERBANDITS. Alle Rechte vorbehalten. | Webdesign und
+        Programmierung: Dennis Joest mit Unterstützung von KI.
+      </p>
     </footer>
 
     <!-- Add the language switcher JS -->
     <script src="language-switcher.js"></script>
-</body>
-
+  </body>
 </html>

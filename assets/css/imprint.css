@@ -8,8 +8,6 @@
   padding: 5px;
   border-radius: 15px;
   overflow-y: auto;
-  max-height: calc(100vh - 320px);
-  position: relative;
 }
 
 .imprint-container::-webkit-scrollbar {
