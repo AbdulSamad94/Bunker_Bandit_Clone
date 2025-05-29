@@ -10,11 +10,12 @@
 .inputs-div {
   display: flex;
   flex-direction: column;
-  
 }
 
 /* General styles for inputs, textarea, and select */
-input, textarea, select {
+input,
+textarea,
+select {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
@@ -24,7 +25,8 @@ input, textarea, select {
   border-radius: 4px;
   color: #fff;
   font-size: 14px;
-  transition: border-color 0.15s cubic-bezier(.4,0,.2,1), box-shadow 0.15s cubic-bezier(.4,0,.2,1);
+  transition: border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Placeholder text color */
@@ -69,15 +71,14 @@ select option {
   color: white;
 }
 
-
 button {
-    background-color: transparent;
-    border: 1px solid #ff6a00;
-    color: #fff;
-    padding: 10px;
-    
-    border-radius: 4px;
-    cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #ff6a00;
+  color: #fff;
+  padding: 10px;
+
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 button:hover {
@@ -86,8 +87,12 @@ button:hover {
 
 @media (max-width: 1000px) {
   .contact-form {
-    
     padding: 15px;
     max-width: 70%;
   }
+}
+
+.contact-form {
+  opacity: 0;
+  animation: fadeInDown 0.6s ease-out forwards;
 }
