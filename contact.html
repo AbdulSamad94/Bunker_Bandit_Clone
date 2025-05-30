@@ -59,42 +59,7 @@
 
   <script src="/assets/scripts/language-switcher.js"></script>
   <script src="assets/scripts/component.js" defer></script>
-  <script>
-    const form = document.querySelector('.contact-form');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const name = form.querySelector('input[type="text"]').value.trim();
-      const email = form.querySelector('input[type="email"]').value.trim();
-      const subject = form.querySelector('select').value;
-      const message = form.querySelector('textarea').value.trim();
-
-      if (!name || !email || !subject || !message) {
-        alert('Bitte fülle alle Felder aus.');
-        return;
-      }
-
-      try {
-        const res = await fetch('api/send-email', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, subject, message }),
-        });
-
-        const data = await res.json();
-
-        if (data.success) {
-          alert('Email Sent Succesfully');
-          form.reset();
-        } else {
-          alert('Email Failed to send.');
-        }
-      } catch (err) {
-        alert('Server error.');
-      }
-    });
-  </script>
+  <script src="assets/scripts/form-handler.js" defer></script>
 </body>
 
 </html>
