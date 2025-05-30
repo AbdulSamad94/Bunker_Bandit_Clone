@@ -4,7 +4,6 @@
   margin: 0 auto;
   padding: 0px;
   border-radius: 15px;
-  overflow-y: auto;
 }
 
 .page-title {
@@ -20,39 +19,41 @@
   display: flex;
   justify-content: space-between;
   background-color: #313131;
-  /* Dark gray background for the tab bar */
   padding: 4px;
   border: none;
   border-radius: 10px;
   margin-bottom: 14px;
   width: 100%;
-  height: 40px;
-  /* Consistent height based on visual estimate */
+  height: auto;
+  /* Allow height to adjust based on content */
+  flex-wrap: wrap;
+  /* Allow tabs to wrap to the next line */
+  gap: 4px;
+  /* Space between wrapped items */
 }
 
-/* Tab Buttons */
+/* Tab Buttons - Core Styles */
 .tab-button {
   flex: 1;
-  /* Equal width distribution */
+  /* Allow flexible width */
+  min-width: fit-content;
+  /* Ensure content fits, prevents text overflow */
   background-color: #313131;
-  /* Light gray for inactive tabs */
   color: #cccccc;
-  /* Light gray text for inactive tabs */
   border: none;
-  padding: 4px 20px;
-  /* Padding for text and emoji */
+  padding: 8px 15px;
+  /* Adjust padding for better fit on smaller screens */
   font-size: 14px;
-  /* Standard font size */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease, color 0.3s ease;
-  /* Smooth transition for hover/active states */
   font-family: sans-serif;
   font-weight: 700;
   border-radius: 4px;
-  /* Consistent sans-serif font */
+  white-space: nowrap;
+  /* Prevent text from wrapping within the button */
 }
 
 .fa-solid {
@@ -100,11 +101,9 @@
 
 /* Song List */
 .songs-section {
-  background: linear-gradient(
-    135deg,
-    rgba(26, 24, 24, 0.05),
-    rgba(44, 34, 27, 0.2)
-  );
+  background: linear-gradient(135deg,
+      rgba(26, 24, 24, 0.05),
+      rgba(44, 34, 27, 0.2));
   border: 1px solid rgba(255, 107, 53, 0.2);
   border-radius: 12px;
   padding: 30px;
@@ -122,11 +121,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 107, 53, 0.1),
-    rgba(26, 15, 8, 0.3)
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.1),
+      rgba(26, 15, 8, 0.3));
   border: 1px solid rgba(255, 107, 53, 0.2);
   border-radius: 6px;
   padding: 10px 25px;
@@ -142,12 +139,10 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(255, 107, 53, 0.05),
-    transparent
-  );
+  background: linear-gradient(45deg,
+      transparent,
+      rgba(255, 107, 53, 0.05),
+      transparent);
   transform: rotate(45deg);
   transition: opacity 0.3s ease;
   opacity: 0;
@@ -274,11 +269,9 @@
   font-style: italic;
   margin: 100px 0;
   padding: 50px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 107, 53, 0.05),
-    rgba(26, 15, 8, 0.2)
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.05),
+      rgba(26, 15, 8, 0.2));
   border: 2px dashed rgba(255, 107, 53, 0.3);
   border-radius: 20px;
 }
@@ -307,7 +300,6 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .main-content {
-    max-height: calc(100vh - 280px);
     padding: 15px;
     max-width: 95%;
   }
@@ -378,7 +370,6 @@
 
 @media (max-width: 480px) {
   .main-content {
-    max-height: calc(100vh - 240px);
     padding: 12px;
   }
 
@@ -464,11 +455,9 @@
   flex-direction: column;
   gap: 10px;
 
-  background: linear-gradient(
-    135deg,
-    rgba(68, 30, 16, 0.1),
-    rgba(26, 15, 8, 0.3)
-  );
+  background: linear-gradient(135deg,
+      rgba(68, 30, 16, 0.1),
+      rgba(26, 15, 8, 0.3));
   border: 1px solid rgba(255, 107, 53, 0.2);
   border-radius: 6px;
   padding: 10px 10px;
@@ -484,12 +473,10 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(255, 107, 53, 0.05),
-    transparent
-  );
+  background: linear-gradient(45deg,
+      transparent,
+      rgba(255, 107, 53, 0.05),
+      transparent);
   transform: rotate(45deg);
   transition: opacity 0.3s ease;
   opacity: 0;
