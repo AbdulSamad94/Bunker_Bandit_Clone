@@ -17,18 +17,17 @@
     <form class="contact-form">
       <div class="inputs-div">
         <label data-i18n="name_label">Name</label>
-        <input type="text" name="name" data-i18n-placeholder="name_placeholder" placeholder="Dein Name" required />
+        <input type="text" data-i18n-placeholder="name_placeholder" placeholder="Dein Name" />
       </div>
 
       <div class="inputs-div">
         <label data-i18n="email_label">E-Mail</label>
-        <input type="email" name="email" data-i18n-placeholder="email_placeholder" placeholder="deine@email.de"
-          required />
+        <input type="email" data-i18n-placeholder="email_placeholder" placeholder="deine@email.de" />
       </div>
 
       <div class="inputs-div">
         <label data-i18n="subject_label">Betreff</label>
-        <select name="subject" required>
+        <select name="options">
           <option value="" data-i18n="subject_default">
             Wähle einen Betreff
           </option>
@@ -49,12 +48,10 @@
 
       <div class="inputs-div">
         <label data-i18n="message_label">Nachricht</label>
-        <textarea name="message" data-i18n-placeholder="message_placeholder" placeholder="Deine Nachricht an uns"
-          required></textarea>
+        <textarea data-i18n-placeholder="message_placeholder" placeholder="Deine Nachricht an uns"></textarea>
       </div>
 
-      <button type="submit" data-i18n="submit_button" disabled id="submit-btn">Nachricht Senden</button>
-      <div id="loading-message" style="display: none; margin-top: 10px; color: #666;">Sending email...</div>
+      <button data-i18n="submit_button">Nachricht Senden</button>
     </form>
   </main>
 
@@ -64,44 +61,22 @@
   <script src="assets/scripts/component.js" defer></script>
   <script>
     const form = document.querySelector('.contact-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const loadingMessage = document.getElementById('loading-message');
-
-    // Enable submit button when form is ready
-    form.addEventListener('input', () => {
-      const name = form.querySelector('input[name="name"]').value.trim();
-      const email = form.querySelector('input[name="email"]').value.trim();
-      const subject = form.querySelector('select[name="subject"]').value;
-      const message = form.querySelector('textarea[name="message"]').value.trim();
-
-      submitBtn.disabled = !(name && email && subject && message);
-    });
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const name = form.querySelector('input[name="name"]').value.trim();
-      const email = form.querySelector('input[name="email"]').value.trim();
-      const subject = form.querySelector('select[name="subject"]').value;
-      const message = form.querySelector('textarea[name="message"]').value.trim();
+      const name = form.querySelector('input[type="text"]').value.trim();
+      const email = form.querySelector('input[type="email"]').value.trim();
+      const subject = form.querySelector('select').value;
+      const message = form.querySelector('textarea').value.trim();
 
       if (!name || !email || !subject || !message) {
         alert('Bitte fülle alle Felder aus.');
         return;
       }
 
-      // Show loading state
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-      loadingMessage.style.display = 'block';
-
       try {
-        // Use relative URL - will work both locally and on Vercel
-        const apiUrl = window.location.hostname === 'localhost'
-          ? 'https://bunker-bandit-clone.vercel.app/api/send-email'
-          : 'https://bunker-bandit-clone.vercel.app/api/send-email';
-
-        const res = await fetch(apiUrl, {
+        const res = await fetch('api/send-email', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, email, subject, message }),
@@ -109,21 +84,14 @@
 
         const data = await res.json();
 
-        if (res.ok && data.success) {
-          alert('Email successfully sent.');
+        if (data.success) {
+          alert('Email Sent Succesfully');
           form.reset();
-          submitBtn.disabled = true;
         } else {
-          alert(`Failed to send email: ${data.error || 'Unknown error'}`);
+          alert('Email Failed to send.');
         }
       } catch (err) {
-        console.error('Error:', err);
-        alert('Server error. Please try again later.');
-      } finally {
-        // Reset button state
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
-        loadingMessage.style.display = 'none';
+        alert('Server error.');
       }
     });
   </script>
