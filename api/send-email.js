@@ -12,18 +12,17 @@ export default async function handler(req, res) {
     }
 
     const transporter = nodemailer.createTransport({
-        host: "sandbox.smtp.mailtrap.io",
-        port: 2525,
+        service: 'gmail',
         auth: {
-            user: process.env.MAILTRAP_USER,
-            pass: process.env.MAILTRAP_PASS,
-        }
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
+        },
     });
 
     try {
         await transporter.sendMail({
             from: email,
-            to: "abdulsamadwork109@gmail.com",
+            to: "abdulsamadsiddiqui2000@gmail.com",
             subject: `Contact Form: ${subject}`,
             text: `From: ${name} <${email}>\n\n${message}`,
         });
