@@ -1,11 +1,53 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Set default language to German with UK flag as default
-  let currentLanguage = localStorage.getItem("language") || "de";
-  const flagIcon = document.getElementById("flag-icon");
-  const languageToggle = document.getElementById("language-toggle");
+document.addEventListener("DOMContentLoaded", async () => {
+    // First load all components
+    await loadComponent("header", "components/header.html");
+    await loadComponent("footer", "components/footer.html");
+    
+    // Then initialize language switcher
+    initializeLanguageSwitcher();
+});
 
-  // Language translations
-  const translations = {
+async function loadComponent(id, file) {
+    try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error(`Failed to load ${file}`);
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+        return true;
+    } catch (err) {
+        console.error("Component load error:", file, err);
+        return false;
+    }
+}
+
+function initializeLanguageSwitcher() {
+    // Wait for elements to be available
+    const maxRetries = 5;
+    let retries = 0;
+    
+    const checkElements = () => {
+        const flagIcon = document.getElementById("flag-icon");
+        const languageToggle = document.getElementById("language-toggle");
+        
+        if (flagIcon && languageToggle) {
+            // Elements found, proceed with initialization
+            setupLanguageSwitcher(flagIcon, languageToggle);
+        } else if (retries < maxRetries) {
+            // Elements not found yet, try again
+            retries++;
+            setTimeout(checkElements, 100 * retries);
+        } else {
+            console.error("Language switcher elements not found after retries");
+        }
+    };
+    
+    checkElements();
+}
+
+function setupLanguageSwitcher(flagIcon, languageToggle) {
+    let currentLanguage = localStorage.getItem("language") || "de";
+    
+   const translations = {
     de: {
       nav_home: "Home",
       nav_about: "Über uns",
@@ -217,46 +259,46 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   };
 
-  function updateFlag(lang) {
-    // Inverted logic: UK flag for German text, German flag for English text
-    flagIcon.src =
-      lang === "de" ? "assets/icons/uk_flag.svg" : "assets/icons/germany-flag-icon.svg";
-    flagIcon.alt = lang === "de" ? "English" : "Deutsch";
-    flagIcon.title =
-      lang === "de" ? "Switch to English" : "Auf Deutsch wechseln";
-  }
+    function updateFlag(lang) {
+        flagIcon.src = lang === "de" 
+            ? "assets/icons/uk_flag.svg" 
+            : "assets/icons/germany-flag-icon.svg";
+        flagIcon.alt = lang === "de" ? "English" : "Deutsch";
+        flagIcon.title = lang === "de" 
+            ? "Switch to English" 
+            : "Auf Deutsch wechseln";
+    }
 
-  // Update all elements with data-i18n attributes
-  function updateContent(lang) {
-    const elements = document.querySelectorAll("[data-i18n]");
-    elements.forEach((element) => {
-      const key = element.getAttribute("data-i18n");
-      if (translations[lang] && translations[lang][key]) {
-        element.innerHTML = translations[lang][key];
-      }
+    function updateContent(lang) {
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+            const key = element.getAttribute("data-i18n");
+            if (translations[lang]?.[key]) {
+                element.innerHTML = translations[lang][key];
+            }
+        });
+
+        document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+            const key = el.getAttribute("data-i18n-placeholder");
+            if (translations[lang]?.[key]) {
+                el.placeholder = translations[lang][key];
+            }
+        });
+
+        document.documentElement.lang = lang;
+        updateFlag(lang);
+    }
+
+    languageToggle.addEventListener("click", () => {
+        currentLanguage = currentLanguage === "de" ? "en" : "de";
+        localStorage.setItem("language", currentLanguage);
+        updateContent(currentLanguage);
     });
 
-    // Add this inside your updateContent() function
-    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-      const key = el.getAttribute("data-i18n-placeholder");
-      if (translations[lang] && translations[lang][key]) {
-        el.placeholder = translations[lang][key];
-      }
-    });
-
-    // Update html lang attribute
-    document.documentElement.lang = lang;
-
-    updateFlag(lang);
-  }
-
-  // Toggle language on button click
-  languageToggle.addEventListener("click", function () {
-    currentLanguage = currentLanguage === "de" ? "en" : "de";
-    localStorage.setItem("language", currentLanguage);
+    // Initialize with current language
     updateContent(currentLanguage);
-  });
+}
+  // ... keep all your existing translations object ...
+ 
 
-  // Load current language on page load
-  updateContent(currentLanguage);
-});
+
+  
