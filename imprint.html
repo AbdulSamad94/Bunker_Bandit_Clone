@@ -7,18 +7,31 @@
     <link rel="stylesheet" href="assets/css/default.css" />
     <link rel="stylesheet" href="assets/css/imprint.css" />
     <link rel="stylesheet" href="assets/css/language-switcher.css" />
+
+    <style>
+      /* Add these styles for the contact links */
+      #email-protect a,
+      #phone-protect a {
+        color: white;
+        text-decoration: none;
+      }
+      #email-protect a:hover,
+      #phone-protect a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
 
   <body>
-    <header class="header">
+     <header class="header">
       <nav class="nav-container">
-        <a class="logo" href="index.html">
+        <div class="logo">
           <img
-            src="assets/Logo.png"
+            src="assets/icons/Logo.png"
             alt="BunkerBandits Logo"
             class="logo-img"
           />
-        </a>
+        </div>
         <ul class="nav-menu">
           <li><a href="index.html" data-i18n="nav_home">Home</a></li>
           <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
@@ -29,7 +42,7 @@
           <li class="flag-container">
             <button class="flag-btn" id="language-toggle">
               <img
-                src="assets/uk_flag.svg.svg"
+                src="assets/icons/uk_flag.svg"
                 alt="Toggle Language"
                 class="flag-icon"
                 id="flag-icon"
@@ -59,8 +72,8 @@
 
       <div>
         <h1 data-i18n="contact_info">Kontaktinformationen</h1>
-        <p>Telefon: +444444444444444444</p>
-        <p>E-Mail: defualt@gmail.com</p>
+        <p>Telefon: <span id="phone-protect" >[JavaScript erforderlich]</span></p>
+        <p>E-Mail: <span id="email-protect">[JavaScript erforderlich]</span></p>
       </div>
 
       <div>
@@ -113,6 +126,24 @@
       </p>
     </footer>
 
-    <script src="language-switcher.js"></script>
+    <script src="/assets/scripts/language-switcher.js"></script>
+    <script>
+      // Email obfuscation
+      const emailUser = "contact";
+      const emailDomain = "bunkerbandits";
+      const emailTld = "de";
+      const email = emailUser + "@" + emailDomain + "." + emailTld;
+      document.getElementById("email-protect").innerHTML = 
+        '<a href="mailto:' + email + '" class="email">' + email + '</a>';
+      
+      // Phone number obfuscation
+      const phoneCountry = "+49";
+      const phoneArea = "(0)172";
+      const phoneNumber = "5224993";
+      const phoneDisplay = phoneCountry + " " + phoneArea + " " + phoneNumber;
+      const phoneHref = phoneCountry + phoneArea.replace(/\D/g, '') + phoneNumber;
+      document.getElementById("phone-protect").innerHTML = 
+        '<a href="tel:' + phoneHref + '">' + phoneDisplay + '</a>';
+    </script>
   </body>
 </html>
