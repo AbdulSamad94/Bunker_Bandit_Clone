@@ -103,15 +103,19 @@
     font-size: 13px;
   }
 }
+
 .welcome-text {
   animation: fadeInDown 0.6s ease-out forwards;
 }
+
 .band-name {
-  animation: fadeInDown 0.6s ease-out 0.2s forwards;
+  animation: fadeInDown 0.6s ease-out forwards;
 }
+
 .description {
-  animation: fadeInDown 0.6s ease-out 0.4s forwards;
+  animation: fadeInDown 0.6s ease-out forwards;
 }
+
 .follow-text {
-  animation: fadeInDown 0.6s ease-out 0.6s forwards;
+  animation: fadeInDown 0.6s ease-out forwards;
 }

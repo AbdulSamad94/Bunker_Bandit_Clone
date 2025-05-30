@@ -1,112 +1,64 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="contact_title">Kontakt</title>
-    <link rel="stylesheet" href="assets/css/default.css" />
-    <link rel="stylesheet" href="assets/css/contact.css" />
-    <link rel="stylesheet" href="assets/css/language-switcher.css" />
-  </head>
 
-  <body>
-    <header class="header">
-      <nav class="nav-container">
-        <div class="logo">
-          <img
-            src="assets/icons/Logo.png"
-            alt="BunkerBandits Logo"
-            class="logo-img"
-          />
-        </div>
-        <ul class="nav-menu">
-          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-          <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
-          <li><a href="media.html" data-i18n="nav_media">Media</a></li>
-          <li><a href="#termine" data-i18n="nav_dates">Termine</a></li>
-          <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
-          <li><a href="imprint.html" data-i18n="nav_imprint">Impressum</a></li>
-          <li class="flag-container">
-            <button class="flag-btn" id="language-toggle">
-              <img
-                src="assets/icons/uk_flag.svg.svg"
-                alt="Toggle Language"
-                class="flag-icon"
-                id="flag-icon"
-              />
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="contact_title">Kontakt</title>
+  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" href="assets/css/contact.css" />
+  <link rel="stylesheet" href="assets/css/language-switcher.css" />
+</head>
 
-    <main>
-      <form class="contact-form">
-        <div class="inputs-div">
-          <label data-i18n="name_label">Name</label>
-          <input
-            type="text"
-            data-i18n-placeholder="name_placeholder"
-            placeholder="Dein Name"
-          />
-        </div>
+<body>
+  <div id="header"></div>
 
-        <div class="inputs-div">
-          <label data-i18n="email_label">E-Mail</label>
-          <input
-            type="email"
-            data-i18n-placeholder="email_placeholder"
-            placeholder="deine@email.de"
-          />
-        </div>
-
-        <div class="inputs-div">
-          <label data-i18n="subject_label">Betreff</label>
-          <select name="options">
-            <option value="" data-i18n="subject_default">
-              Wähle einen Betreff
-            </option>
-            <option value="Booking Anfrage" data-i18n="subject_booking">
-              Booking Anfrage
-            </option>
-            <option value="Press & Media" data-i18n="subject_press">
-              Press & Media
-            </option>
-            <option value="Fan Mail" data-i18n="subject_fanmail">
-              Fan Mail
-            </option>
-            <option value="Sonstiges" data-i18n="subject_other">
-              Sonstiges
-            </option>
-          </select>
-        </div>
-
-        <div class="inputs-div">
-          <label data-i18n="message_label">Nachricht</label>
-          <textarea
-            data-i18n-placeholder="message_placeholder"
-            placeholder="Deine Nachricht an uns"
-          ></textarea>
-        </div>
-
-        <button data-i18n="submit_button">Nachricht Senden</button>
-      </form>
-    </main>
-
-    <footer class="footer">
-      <div class="social-icons">
-        <div class="social-icon instagram"></div>
-        <div class="social-icon facebook"></div>
+  <main>
+    <form class="contact-form">
+      <div class="inputs-div">
+        <label data-i18n="name_label">Name</label>
+        <input type="text" data-i18n-placeholder="name_placeholder" placeholder="Dein Name" />
       </div>
-      <p class="footer-text" data-i18n="footer_text">
-        Social-Media-Links folgen in Kürze – wir arbeiten daran.
-      </p>
-      <p class="copyright" data-i18n="copyright_text">
-        © 2025 BUNKERBANDITS. Alle Rechte vorbehalten. | Webdesign und
-        Programmierung: Dennis Joest mit Unterstützung von KI.
-      </p>
-    </footer>
 
-    <script src="/assets/scripts/language-switcher.js"></script>
-  </body>
+      <div class="inputs-div">
+        <label data-i18n="email_label">E-Mail</label>
+        <input type="email" data-i18n-placeholder="email_placeholder" placeholder="deine@email.de" />
+      </div>
+
+      <div class="inputs-div">
+        <label data-i18n="subject_label">Betreff</label>
+        <select name="options">
+          <option value="" data-i18n="subject_default">
+            Wähle einen Betreff
+          </option>
+          <option value="Booking Anfrage" data-i18n="subject_booking">
+            Booking Anfrage
+          </option>
+          <option value="Press & Media" data-i18n="subject_press">
+            Press & Media
+          </option>
+          <option value="Fan Mail" data-i18n="subject_fanmail">
+            Fan Mail
+          </option>
+          <option value="Sonstiges" data-i18n="subject_other">
+            Sonstiges
+          </option>
+        </select>
+      </div>
+
+      <div class="inputs-div">
+        <label data-i18n="message_label">Nachricht</label>
+        <textarea data-i18n-placeholder="message_placeholder" placeholder="Deine Nachricht an uns"></textarea>
+      </div>
+
+      <button data-i18n="submit_button">Nachricht Senden</button>
+    </form>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="/assets/scripts/language-switcher.js"></script>
+  <script src="assets/scripts/component.js" defer></script>
+</body>
+
 </html>
