@@ -13,13 +13,13 @@
   <body>
     <header class="header">
       <nav class="nav-container">
-        <a class="logo" href="index.html">
+        <div class="logo">
           <img
-            src="assets/Logo.png"
+            src="assets/icons/Logo.png"
             alt="BunkerBandits Logo"
             class="logo-img"
           />
-        </a>
+        </div>
         <ul class="nav-menu">
           <li><a href="index.html" data-i18n="nav_home">Home</a></li>
           <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
@@ -27,11 +27,10 @@
           <li><a href="#termine" data-i18n="nav_dates">Termine</a></li>
           <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
           <li><a href="imprint.html" data-i18n="nav_imprint">Impressum</a></li>
-          <!-- Navbar section - replace the flag container part -->
           <li class="flag-container">
             <button class="flag-btn" id="language-toggle">
               <img
-                src="assets/uk_flag.svg"
+                src="assets/icons/uk_flag.svg"
                 alt="Toggle Language"
                 class="flag-icon"
                 id="flag-icon"
@@ -70,6 +69,6 @@
     </footer>
 
     <!-- Add this JavaScript file for language switching -->
-    <script src="language-switcher.js"></script>
+    <script src="/assets/scripts/language-switcher.js"></script>
   </body>
 </html>

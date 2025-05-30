@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateFlag(lang) {
     // Inverted logic: UK flag for German text, German flag for English text
     flagIcon.src =
-      lang === "de" ? "assets/uk_flag.svg" : "assets/germany-flag-icon.svg";
+      lang === "de" ? "assets/icons/uk_flag.svg" : "assets/icons/germany-flag-icon.svg";
     flagIcon.alt = lang === "de" ? "English" : "Deutsch";
     flagIcon.title =
       lang === "de" ? "Switch to English" : "Auf Deutsch wechseln";
