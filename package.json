@@ -1,0 +1,20 @@
+{
+  "name": "contact-form-vercel",
+  "version": "1.0.0",
+  "description": "Contact form with email functionality on Vercel",
+  "main": "index.html",
+  "dependencies": {
+    "nodemailer": "^6.9.7"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required'"
+  },
+  "keywords": [
+    "contact-form",
+    "nodemailer",
+    "vercel"
+  ],
+  "author": "Abdulsamad",
+  "license": "MIT"
+}
