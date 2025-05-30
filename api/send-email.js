@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     try {
         await transporter.sendMail({
             from: email,
-            to: "abdulsamadsiddiqui2000@gmail.com",
+            to: "contact@bunkerbandits.de",
             subject: `Contact Form: ${subject}`,
             text: `From: ${name} <${email}>\n\n${message}`,
         });
