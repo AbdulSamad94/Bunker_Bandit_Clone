@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     try {
         const data = await resend.emails.send({
             from: 'onboarding@resend.dev', // yeh default he, domain verify karoge to change kar sakte ho
-            to: 'abdulsamadsiddiqui2000@gmail.com',
+            to: 'abdulsamadwork109@gmail.com',
             subject: `Contact Form: ${subject}`,
             text: `From: ${name} <${email}>\n\n${message}`,
         });
