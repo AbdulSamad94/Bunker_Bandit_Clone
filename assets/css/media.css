@@ -653,6 +653,7 @@
 @media (max-width: 480px) {
   .main-content {
     padding: 0.5rem;
+    margin-top: 20px;
   }
 
   .page-title {
@@ -661,7 +662,7 @@
 
   .media-tabs {
     padding: 8px;
-    margin-bottom: 150px;
+    margin-bottom: 40px;
   }
 
   .tab-button {
