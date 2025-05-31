@@ -1,4 +1,6 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
@@ -11,23 +13,15 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'Please fill all fields' });
     }
 
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
-        },
-    });
-
     try {
-        await transporter.sendMail({
-            from: email,
-            to: "abdulsamadsiddiqui2000@gmail.com",
+        const data = await resend.emails.send({
+            from: 'onboarding@resend.dev', // yeh default he, domain verify karoge to change kar sakte ho
+            to: 'abdulsamadsiddiqui2000@gmail.com',
             subject: `Contact Form: ${subject}`,
             text: `From: ${name} <${email}>\n\n${message}`,
         });
 
-        res.status(200).json({ success: true });
+        res.status(200).json({ success: true, data });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

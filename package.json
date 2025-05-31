@@ -4,7 +4,8 @@
   "description": "Contact form with email functionality on Vercel",
   "main": "index.html",
   "dependencies": {
-    "nodemailer": "^6.9.7"
+    "nodemailer": "^6.9.7",
+    "resend": "^4.5.1"
   },
   "scripts": {
     "dev": "vercel dev",
