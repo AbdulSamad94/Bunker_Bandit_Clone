@@ -4,6 +4,8 @@
   margin: 0 auto;
   padding: 0px;
   border-radius: 15px;
+  max-height: calc(100vh - 280px);
+  overflow-y: auto;
 }
 
 .page-title {
@@ -746,5 +748,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-
