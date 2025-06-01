@@ -1,7 +1,7 @@
 .main-content {
   flex: 1;
   max-width: 40%;
-  margin: 0 auto;
+margin: 15px auto 0px auto;
   padding: 5px;
   border-radius: 15px;
   max-height: calc(100vh - 280px);
@@ -38,10 +38,14 @@
 
 .band-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 25px;
   margin-bottom: 40px;
+  justify-content: center;
 }
+
+
+
 
 .member-card {
   background: linear-gradient(135deg,
